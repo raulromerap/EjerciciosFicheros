@@ -10,16 +10,16 @@ public class Principal {
 
 		try {
 			sc = new Scanner(new FileReader("src\\ejercicio02\\Enteros.txt"));
-
-			int valor = 0;
+;
 			double suma = 0;
-			double media = 0.0;
 			int cont = 0;
-			while (valor != -1) {
+			int valor = 0;
+			while(sc.hasNextInt()) {
 				valor = sc.nextInt();
 				suma += valor;
-				cont++;
+				cont ++;
 			}
+			double media = suma/cont;
 			System.out.println(suma + " " + media);
 		} catch (Exception e) {
 			e.getStackTrace();
