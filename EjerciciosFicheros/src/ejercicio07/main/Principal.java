@@ -24,7 +24,9 @@ public class Principal {
 		String telefono="";
 		int resp = 0;
 		int opc = 0;
+		
 		try {
+			
 			if(f.exists()) {
 				scan = new Scanner(new FileReader(f));
 				while(scan.hasNextLine()) {
@@ -33,7 +35,7 @@ public class Principal {
 				
 			}
 			
-				bw = new BufferedWriter(new FileWriter("src\\ejercicio07\\main\\agenda.txt", true));
+				bw = new BufferedWriter(new FileWriter("src\\ejercicio07\\main\\agenda.txt"));
 				do {
 					menu();
 					opc = sc.nextInt();
@@ -71,6 +73,7 @@ public class Principal {
 				
 			for(Map.Entry<String, String> entry : GestionAgenda.agenda.entrySet()) {
 				bw.write(entry.getKey() + " " + entry.getValue());
+				bw.newLine();
 			}
 		} catch (IOException e) {
 			e.getStackTrace();
